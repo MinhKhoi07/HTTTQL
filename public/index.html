@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTTTQL | Trang chủ</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script defer src="/assets/app.js"></script>
+  </head>
+  <body data-page="home">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark"></span>
+          <span>HTTTQL</span>
+        </a>
+        <nav class="nav">
+          <a data-nav-link="home" href="/">Trang chủ</a>
+          <a data-nav-link="sales" href="/sales">Bán hàng</a>
+          <a data-nav-link="inventory" href="/inventory">Tồn kho</a>
+          <a data-nav-link="warehouse" href="/warehouse">Nhập kho</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <span class="kicker">Quan ly cua hang - MVC modular monolith</span>
+          <h1>Trang dieu khien cho ban hang, ton kho va nhap kho</h1>
+          <p class="hero-copy">
+            Giao dien nay ket noi truc tiep voi API hien co trong du an, cho phep tao don ban hang,
+            ghi nhan giao dich ton kho va lap phieu nhap kho ngay tren mot man hinh thong nhat.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/sales">Bat dau ban hang</a>
+            <a class="btn btn-secondary" href="/inventory">Quan ly ton kho</a>
+          </div>
+        </div>
+
+        <div class="side-stack">
+          <div class="stat">
+            <div class="stat-label">Trang thai he thong</div>
+            <div class="stat-value">API</div>
+            <div class="stat-note" data-health>Dang kiem tra ket noi...</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Don ban hang</div>
+            <div class="stat-value" data-sales-count>-</div>
+            <div class="stat-note">So don hien co trong bo nho ung dung</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Giao dich ton kho</div>
+            <div class="stat-value" data-inventory-count>-</div>
+            <div class="stat-note">Nhap, xuat, dieu chinh ton kho</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Phieu nhap kho</div>
+            <div class="stat-value" data-warehouse-count>-</div>
+            <div class="stat-note">Cap nhat hang hoa tu nha cung cap</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <div class="container">
+        <section class="section">
+          <div class="section-title">
+            <div>
+              <h2>Lua chon nhanh</h2>
+              <p>Di den tung chuc nang de tao du lieu mau va xem ket qua tu API.</p>
+            </div>
+          </div>
+          <div class="cards">
+            <article class="feature">
+              <div class="badge">Sales</div>
+              <h3>Ban hang</h3>
+              <p class="mini">Tao don hang nhieu san pham, tinh tong tien va xem danh sach don hang.</p>
+            </article>
+            <article class="feature">
+              <div class="badge">Inventory</div>
+              <h3>Ton kho</h3>
+              <p class="mini">Ghi nhan cac giao dich IN, OUT va ADJUSTMENT cho tung san pham.</p>
+            </article>
+            <article class="feature">
+              <div class="badge">Warehouse</div>
+              <h3>Nhap kho</h3>
+              <p class="mini">Lap phieu nhap kho tu nha cung cap voi nhieu dong san pham.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section grid-2">
+          <div class="preview">
+            <div class="badge">API endpoints</div>
+            <div class="link-list">
+              <a href="/api/health"><strong>/api/health</strong><span>kiem tra ket noi</span></a>
+              <a href="/api/sales/orders"><strong>/api/sales/orders</strong><span>don ban hang</span></a>
+              <a href="/api/inventory/stock-movements"><strong>/api/inventory/stock-movements</strong><span>giao dich ton kho</span></a>
+              <a href="/api/warehouse/goods-receipts"><strong>/api/warehouse/goods-receipts</strong><span>phieu nhap kho</span></a>
+            </div>
+          </div>
+          <div class="note-box">
+            <p><strong>Huong su dung</strong></p>
+            <p>1. Mo tung trang chuc nang de tao du lieu mau.</p>
+            <p>2. Danh sach ben duoi se tu cap nhat theo du lieu tu API.</p>
+            <p>3. Neu can noi tiep voi MySQL that, toi co the gan repository vao database ngay sau buoc nay.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">HTTTQL - Giao dien quan ly cua hang</div>
+    </footer>
+  </body>
+</html>

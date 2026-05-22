@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTTTQL | Nhap kho</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <script defer src="/assets/app.js"></script>
+  </head>
+  <body data-page="warehouse">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark"></span>
+          <span>HTTTQL</span>
+        </a>
+        <nav class="nav">
+          <a data-nav-link="home" href="/">Trang chủ</a>
+          <a data-nav-link="sales" href="/sales">Bán hàng</a>
+          <a data-nav-link="inventory" href="/inventory">Tồn kho</a>
+          <a data-nav-link="warehouse" href="/warehouse">Nhập kho</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="section">
+          <div class="section-title">
+            <div>
+              <h2>Lap phieu nhap kho</h2>
+              <p>Gui phieu nhap kho voi nhieu dong san pham den <strong>/api/warehouse/goods-receipts</strong>.</p>
+            </div>
+          </div>
+
+          <div class="page-grid">
+            <div class="form-card">
+              <h3>Thong tin phieu nhap</h3>
+              <form data-warehouse-form>
+                <div class="field-grid">
+                  <label>
+                    Ma nha cung cap
+                    <input name="supplierId" placeholder="SUP001" required />
+                  </label>
+                  <label>
+                    Ma kho
+                    <input name="warehouseId" placeholder="WH001" required />
+                  </label>
+                </div>
+                <div class="rows" data-warehouse-rows></div>
+                <div class="form-actions">
+                  <button class="btn btn-secondary" type="button" data-add-warehouse-row>+ Them san pham</button>
+                  <button class="btn btn-primary" type="submit">Luu phieu nhap</button>
+                </div>
+              </form>
+              <div class="output" data-output></div>
+            </div>
+
+            <div class="list-card">
+              <h3>Phieu nhap gan day</h3>
+              <p class="helper">Du lieu lay truc tiep tu API.</p>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nha cung cap</th>
+                      <th>Ma kho</th>
+                      <th>So dong</th>
+                      <th>Thoi gian</th>
+                    </tr>
+                  </thead>
+                  <tbody data-warehouse-list></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

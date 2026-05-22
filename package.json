@@ -1,0 +1,27 @@
+{
+  "name": "htttql-convenience-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MVC modular monolith skeleton for convenience store management",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.22.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.8.6",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}
