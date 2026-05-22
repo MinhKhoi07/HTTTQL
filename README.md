@@ -101,6 +101,15 @@ Mo trinh duyet tai:
 http://localhost:3000/
 ```
 
+## Local URLs
+
+- Node (dev server): `http://localhost:3000/` — khởi động bằng `npm run dev`.
+- XAMPP (static files, nếu bạn chạy Apache trên cổng 8080):
+  - Truy cập giao diện tĩnh: `http://localhost:8080/HTTTQL/public/index.html`
+  - Hoặc danh mục dự án: `http://localhost:8080/HTTTQL/` (nếu Apache hiển thị index).
+
+Lưu ý: nếu bạn dùng XAMPP trên cổng khác, thay `8080` bằng cổng tương ứng.
+
 ## API chinh
 
 - `GET /api/health`
