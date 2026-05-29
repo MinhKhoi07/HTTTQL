@@ -6,8 +6,8 @@ export type GoodsReceiptItem = {
 
 export type GoodsReceipt = {
   id: string;
-  supplierId: string;
-  warehouseId: string;
+  supplierId?: string | null;
+  warehouseId?: string | null;
   items: GoodsReceiptItem[];
   createdAt: string;
 };

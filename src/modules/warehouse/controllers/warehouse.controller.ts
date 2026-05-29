@@ -8,14 +8,14 @@ import { WarehouseService } from "../services/warehouse.service";
 const warehouseService = new WarehouseService(new WarehouseRepository());
 
 export class WarehouseController {
-  static createGoodsReceipt(req: Request, res: Response): void {
+  static async createGoodsReceipt(req: Request, res: Response): Promise<void> {
     const input = req.body as CreateGoodsReceiptDto;
-    const receipt = warehouseService.createGoodsReceipt(input);
+    const receipt = await warehouseService.createGoodsReceipt(input);
     res.status(201).json(ok("Goods receipt created", receipt));
   }
 
-  static listGoodsReceipts(_req: Request, res: Response): void {
-    const receipts = warehouseService.listGoodsReceipts();
+  static async listGoodsReceipts(_req: Request, res: Response): Promise<void> {
+    const receipts = await warehouseService.listGoodsReceipts();
     res.json(ok("Goods receipts fetched", receipts));
   }
 }

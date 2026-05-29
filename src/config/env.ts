@@ -12,4 +12,8 @@ export const env = {
   dbPassword: process.env.DB_PASSWORD ?? "",
   dbName: process.env.DB_NAME ?? "htttql",
   dbConnectionLimit: parseNumber(process.env.DB_CONNECTION_LIMIT, 10)
+  ,
+  jwtSecret: process.env.JWT_SECRET ?? "change_me_in_production",
+  jwtExpiresIn: process.env.JWT_EXPIRES_IN ?? "8h"
 };
+

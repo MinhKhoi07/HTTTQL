@@ -5,11 +5,8 @@ import { SaleOrder } from "../models/sale-order.model";
 export class SalesService {
   constructor(private readonly repository: SalesRepository) {}
 
-  createOrder(input: CreateSaleOrderDto): SaleOrder {
-    const totalAmount = input.items.reduce(
-      (sum, item) => sum + item.quantity * item.unitPrice,
-      0
-    );
+  async createOrder(input: CreateSaleOrderDto): Promise<SaleOrder> {
+    const totalAmount = input.items.reduce((sum, item) => sum + item.quantity * item.unitPrice, 0);
 
     const order: SaleOrder = {
       id: `SO-${Date.now()}`,
@@ -21,7 +18,7 @@ export class SalesService {
     return this.repository.save(order);
   }
 
-  listOrders(): SaleOrder[] {
+  async listOrders(): Promise<SaleOrder[]> {
     return this.repository.findAll();
   }
 }

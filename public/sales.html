@@ -3,71 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTTTQL | Ban hang</title>
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script defer src="/assets/app.js"></script>
+    <title>HTTTQL | Bán hàng</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
   </head>
-  <body data-page="sales">
-    <header class="topbar">
-      <div class="container topbar-inner">
-        <a class="brand" href="/">
-          <span class="brand-mark"></span>
-          <span>HTTTQL</span>
-        </a>
-        <nav class="nav">
-          <a data-nav-link="home" href="/">Trang chủ</a>
-          <a data-nav-link="sales" href="/sales">Bán hàng</a>
-          <a data-nav-link="inventory" href="/inventory">Tồn kho</a>
-          <a data-nav-link="warehouse" href="/warehouse">Nhập kho</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <div class="container">
-        <section class="section">
-          <div class="section-title">
-            <div>
-              <h2>Tao don ban hang</h2>
-              <p>Nhap nhieu dong san pham va gui den API <strong>/api/sales/orders</strong>.</p>
-            </div>
-          </div>
-
-          <div class="page-grid">
-            <div class="form-card">
-              <h3>Thong tin don hang</h3>
-              <p class="helper">Moi san pham can co ma, so luong va don gia.</p>
-              <form data-sales-form>
-                <div class="rows" data-sales-rows></div>
-                <div class="form-actions">
-                  <button class="btn btn-secondary" type="button" data-add-sales-row>+ Them san pham</button>
-                  <button class="btn btn-primary" type="submit">Luu don hang</button>
-                </div>
-              </form>
-              <div class="output" data-output></div>
-            </div>
-
-            <div class="list-card">
-              <h3>Don hang gan day</h3>
-              <p class="helper">Du lieu duoc lay truc tiep tu API hien tai.</p>
-              <div class="table-wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Thoi gian</th>
-                      <th>So dong</th>
-                      <th>Tong tien</th>
-                      <th>Items</th>
-                    </tr>
-                  </thead>
-                  <tbody data-sales-list></tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
-  </body>
+  <body data-page="sales"></body>
 </html>

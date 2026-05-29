@@ -8,14 +8,14 @@ import { CreateSaleOrderDto } from "../dto/create-sale-order.dto";
 const salesService = new SalesService(new SalesRepository());
 
 export class SalesController {
-  static createOrder(req: Request, res: Response): void {
+  static async createOrder(req: Request, res: Response): Promise<void> {
     const input = req.body as CreateSaleOrderDto;
-    const order = salesService.createOrder(input);
+    const order = await salesService.createOrder(input);
     res.status(201).json(ok("Sale order created", order));
   }
 
-  static listOrders(_req: Request, res: Response): void {
-    const orders = salesService.listOrders();
+  static async listOrders(_req: Request, res: Response): Promise<void> {
+    const orders = await salesService.listOrders();
     res.json(ok("Sale orders fetched", orders));
   }
 }

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Đăng nhập</title>
+  <style>
+    body{font-family:Inter,system-ui,Arial;background:#f6fbff;display:flex;align-items:center;justify-content:center;height:100vh;margin:0}
+    .card{background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 20px rgba(11,26,57,0.08);width:380px}
+    h1{margin:0 0 8px;font-size:1.2rem}
+    label{display:block;font-size:0.86rem;margin-top:12px}
+    input{width:100%;padding:10px;border:1px solid #e6eef8;border-radius:8px;margin-top:6px}
+    button{margin-top:16px;width:100%;padding:10px;border-radius:8px;border:0;background:#0f9d63;color:#fff;font-weight:700}
+    .muted{color:#6b7b93;font-size:0.9rem;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Đăng nhập hệ thống</h1>
+    <p class="muted">Vui lòng đăng nhập để tiếp tục</p>
+    <form id="loginForm">
+      <label>Username
+        <input id="username" name="username" autocomplete="username" required />
+      </label>
+      <label>Mật khẩu
+        <input id="password" name="password" type="password" autocomplete="current-password" required />
+      </label>
+      <button type="submit">Đăng nhập</button>
+    </form>
+    <div id="message" class="muted"></div>
+  </div>
+  <script>
+    async function doLogin(username, password) {
+      const msg = document.getElementById('message');
+      try {
+        const res = await fetch('/api/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username, password }) });
+        if (res.ok) {
+          window.location.href = '/';
+          return true;
+        }
+        const json = await res.json().catch(() => null);
+        msg.textContent = json?.message || 'Đăng nhập thất bại';
+      } catch (err) {
+        msg.textContent = 'Lỗi kết nối';
+      }
+      return false;
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      await doLogin(username, password);
+    });
+
+    // Auto-login when username & password are present in query string
+    (function autoLoginFromQuery() {
+      try {
+        const qp = new URLSearchParams(window.location.search);
+        const u = qp.get('username');
+        const p = qp.get('password');
+        if (u && p) {
+          document.getElementById('username').value = u;
+          document.getElementById('password').value = p;
+          // perform login without leaving credentials in history
+          history.replaceState({}, '', '/login');
+          doLogin(u, p);
+        }
+      } catch (err) {
+        // ignore
+      }
+    })();
+  </script>
+</body>
+</html>

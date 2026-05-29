@@ -3,95 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTTTQL | Ton kho</title>
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <script defer src="/assets/app.js"></script>
+    <title>HTTTQL | Tồn kho</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
   </head>
-  <body data-page="inventory">
-    <header class="topbar">
-      <div class="container topbar-inner">
-        <a class="brand" href="/">
-          <span class="brand-mark"></span>
-          <span>HTTTQL</span>
-        </a>
-        <nav class="nav">
-          <a data-nav-link="home" href="/">Trang chủ</a>
-          <a data-nav-link="sales" href="/sales">Bán hàng</a>
-          <a data-nav-link="inventory" href="/inventory">Tồn kho</a>
-          <a data-nav-link="warehouse" href="/warehouse">Nhập kho</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <div class="container">
-        <section class="section">
-          <div class="section-title">
-            <div>
-              <h2>Quan ly ton kho</h2>
-              <p>Ghi nhan giao dich ton kho vao <strong>/api/inventory/stock-movements</strong>.</p>
-            </div>
-          </div>
-
-          <div class="page-grid">
-            <div class="form-card">
-              <h3>Tao giao dich ton kho</h3>
-              <form data-inventory-form>
-                <div class="field-grid">
-                  <label>
-                    Ma san pham
-                    <input name="productId" placeholder="SP001" required />
-                  </label>
-                  <label>
-                    Ma kho
-                    <input name="warehouseId" placeholder="WH001" required />
-                  </label>
-                  <label>
-                    Loai giao dich
-                    <select name="type" required>
-                      <option value="IN">IN</option>
-                      <option value="OUT">OUT</option>
-                      <option value="ADJUSTMENT">ADJUSTMENT</option>
-                    </select>
-                  </label>
-                  <label>
-                    So luong
-                    <input name="quantity" type="number" min="1" step="1" value="1" required />
-                  </label>
-                </div>
-                <label>
-                  Ghi chu
-                  <textarea name="note" placeholder="Mo ta giao dich neu can"></textarea>
-                </label>
-                <div class="form-actions">
-                  <button class="btn btn-primary" type="submit">Luu giao dich</button>
-                </div>
-              </form>
-              <div class="output" data-output></div>
-            </div>
-
-            <div class="list-card">
-              <h3>Lich su ton kho</h3>
-              <p class="helper">Danh sach giao dich moi nhat tu API.</p>
-              <div class="table-wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>San pham</th>
-                      <th>Ma kho</th>
-                      <th>Loai</th>
-                      <th>So luong</th>
-                      <th>Thoi gian</th>
-                    </tr>
-                  </thead>
-                  <tbody data-inventory-list></tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
-  </body>
+  <body data-page="inventory"></body>
 </html>

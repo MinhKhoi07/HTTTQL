@@ -5,7 +5,7 @@ import { WarehouseRepository } from "../repositories/warehouse.repository";
 export class WarehouseService {
   constructor(private readonly repository: WarehouseRepository) {}
 
-  createGoodsReceipt(input: CreateGoodsReceiptDto): GoodsReceipt {
+  async createGoodsReceipt(input: CreateGoodsReceiptDto): Promise<GoodsReceipt> {
     const receipt: GoodsReceipt = {
       id: `GR-${Date.now()}`,
       supplierId: input.supplierId,
@@ -17,7 +17,7 @@ export class WarehouseService {
     return this.repository.save(receipt);
   }
 
-  listGoodsReceipts(): GoodsReceipt[] {
+  async listGoodsReceipts(): Promise<GoodsReceipt[]> {
     return this.repository.findAll();
   }
 }
