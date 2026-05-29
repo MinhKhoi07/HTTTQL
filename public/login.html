@@ -33,7 +33,7 @@
     async function doLogin(username, password) {
       const msg = document.getElementById('message');
       try {
-        const res = await fetch('/api/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username, password }) });
+        const res = await fetch('/api/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin', body: JSON.stringify({ username, password }) });
         if (res.ok) {
           window.location.href = '/';
           return true;
